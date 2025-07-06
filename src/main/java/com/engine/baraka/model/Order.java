@@ -34,7 +34,11 @@ public class Order {
     }
 
     public static Order createFromRequest(long id, OrderRequest request) {
-        return of(id, Instant.now(), request.asset(), request.price(), 
+        return createFromRequest(id, request, Instant.now());
+    }
+
+    public static Order createFromRequest(long id, OrderRequest request, Instant timestamp) {
+        return of(id, timestamp, request.asset(), request.price(), 
              request.amount(), request.direction());
     }
 

@@ -35,10 +35,10 @@ public class OrderBook {
         ordersAtPrice.add(order);
     }
 
-    public ConcurrentMap<BigDecimal, ConcurrentLinkedQueue<Order>> getBids() {
+    public ConcurrentSkipListMap<BigDecimal, ConcurrentLinkedQueue<Order>> getBids() {
         return bids;
     }
-    public ConcurrentMap<BigDecimal, ConcurrentLinkedQueue<Order>> getAsks() {
+    public ConcurrentSkipListMap<BigDecimal, ConcurrentLinkedQueue<Order>> getAsks() {
         return asks;
     }
 
