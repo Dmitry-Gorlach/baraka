@@ -101,3 +101,6 @@ mvn verify
 ```
 
 The project is configured to require a minimum of 80% line coverage.
+
+## GitFlow
+Use the "develop" branch to create a new feature/.. branches off of it
