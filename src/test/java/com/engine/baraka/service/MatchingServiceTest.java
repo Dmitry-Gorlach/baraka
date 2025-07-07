@@ -181,10 +181,10 @@ class MatchingServiceTest {
         assertAll("Ensure that when multiple orders have the same price, the matching" +
                         "logic fills the oldest first, e.g. BUY order can match with only 2 of the 3 sell orders",
                 () -> assertOrderFullyFilled(buyOrder, 2),
-                () -> assertTradeExistsWithCounterparty(buyOrder, sellOrders.get(0).getId()),
+                () -> assertTradeExistsWithCounterparty(buyOrder, sellOrders.getFirst().getId()),
                 () -> assertTradeExistsWithCounterparty(buyOrder, sellOrders.get(1).getId()),
                 () -> assertTradeNotExistsWithCounterparty(buyOrder, sellOrders.get(2).getId()),
-                () -> assertOrderFullyFilled(sellOrders.get(0), 1),
+                () -> assertOrderFullyFilled(sellOrders.getFirst(), 1),
                 () -> assertOrderFullyFilled(sellOrders.get(1), 1),
                 () -> assertOrderNotFilled(sellOrders.get(2))
         );
