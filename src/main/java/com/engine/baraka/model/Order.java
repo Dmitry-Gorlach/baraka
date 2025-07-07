@@ -1,5 +1,6 @@
 package com.engine.baraka.model;
 
+import com.engine.baraka.dto.OrderRequest;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

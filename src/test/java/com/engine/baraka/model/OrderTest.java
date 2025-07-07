@@ -1,5 +1,6 @@
 package com.engine.baraka.model;
 
+import com.engine.baraka.dto.OrderRequest;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -69,7 +70,7 @@ class OrderTest {
 
         assertAll("Adding a trade should update order correctly",
             () -> assertEquals(1, order.getTrades().size(), "Trade list should contain one trade"),
-            () -> assertEquals(trade, order.getTrades().get(0), "Trade in list should match added trade"),
+            () -> assertEquals(trade, order.getTrades().getFirst(), "Trade in list should match added trade"),
             () -> assertEquals(BigDecimal.valueOf(1), order.getPendingAmount(), "Pending amount should be reduced by trade amount")
         );
     }

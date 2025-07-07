@@ -2,7 +2,7 @@ package com.engine.baraka.util;
 
 import com.engine.baraka.model.Direction;
 import com.engine.baraka.model.Order;
-import com.engine.baraka.model.OrderRequest;
+import com.engine.baraka.dto.OrderRequest;
 import com.engine.baraka.service.MatchingService;
 
 import java.math.BigDecimal;

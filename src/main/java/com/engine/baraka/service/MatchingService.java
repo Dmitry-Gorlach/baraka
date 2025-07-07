@@ -2,7 +2,7 @@ package com.engine.baraka.service;
 
 import com.engine.baraka.model.Direction;
 import com.engine.baraka.model.Order;
-import com.engine.baraka.model.OrderRequest;
+import com.engine.baraka.dto.OrderRequest;
 import com.engine.baraka.model.Trade;
 import org.springframework.stereotype.Service;
 
@@ -61,10 +61,6 @@ public class MatchingService {
     }
 
     private void validateOrderRequest(OrderRequest request) {
-        Objects.requireNonNull(request.asset(), "Asset cannot be null");
-        Objects.requireNonNull(request.price(), "Price cannot be null");
-        Objects.requireNonNull(request.amount(), "Amount cannot be null");
-        Objects.requireNonNull(request.direction(), "Direction cannot be null");
 
         if (request.price().compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("Price must be positive.");
@@ -128,7 +124,6 @@ public class MatchingService {
                 continue;
             }
 
-            // This ensures atomic read and update of its pending amount.
             synchronized (bookOrder) {
                 // Double-check if the order was already filled by another thread while this thread was waiting for the lock.
                 if (bookOrder.isOrderFullyFilled()) {
@@ -149,9 +144,6 @@ public class MatchingService {
         }
     }
 
-    /**
-     * Creates a trade between two orders and updates their pending amounts.
-     */
     private void createTrade(Order incomingOrder, Order bookOrder, BigDecimal price) {
         BigDecimal tradeAmount = incomingOrder.getPendingAmount().min(bookOrder.getPendingAmount());
 
