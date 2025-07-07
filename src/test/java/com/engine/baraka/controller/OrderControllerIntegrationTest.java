@@ -1,7 +1,7 @@
 package com.engine.baraka.controller;
 
 import com.engine.baraka.model.Direction;
-import com.engine.baraka.model.OrderRequest;
+import com.engine.baraka.dto.OrderRequest;
 import com.engine.baraka.util.TestUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;

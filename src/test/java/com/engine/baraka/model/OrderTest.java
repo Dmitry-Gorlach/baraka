@@ -1,5 +1,6 @@
 package com.engine.baraka.model;
 
+import com.engine.baraka.dto.OrderRequest;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

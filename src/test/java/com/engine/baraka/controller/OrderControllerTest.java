@@ -4,7 +4,7 @@ import com.engine.baraka.dto.OrderResponse;
 import com.engine.baraka.mapper.OrderMapper;
 import com.engine.baraka.model.Direction;
 import com.engine.baraka.model.Order;
-import com.engine.baraka.model.OrderRequest;
+import com.engine.baraka.dto.OrderRequest;
 import com.engine.baraka.service.MatchingService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
